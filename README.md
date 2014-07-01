@@ -1,5 +1,5 @@
-deck36-api-backend
-==========================
+Plan9 from outer kitten api backend
+===================================
 
 [1]: https://github.com/joyent/node         "NodeJS"
 [2]: https://npmjs.org/                     "npm"
@@ -9,7 +9,9 @@ deck36-api-backend
 [6]: https://github.com/Unitech/pm2         "pm2"
 [7]: https://github.com/remy/nodemon        "nodemon"
 [8]: http://www.rabbitmq.com/              "rabbitMq"
-![DECK36](/doc/deck36/logo.jpg)
+[logo]: ./deck36.png "Deck36 Logo"
+
+![Deck36 Logo][logo]
 
 ## Introduction
 
@@ -31,7 +33,7 @@ This is the api backend for plan9 mmorpg.
 
 OR
 
-``
+```
 sh bin/install.sh
 ```
 

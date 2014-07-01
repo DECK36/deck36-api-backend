@@ -68,7 +68,7 @@
                     return;
                 }
                 var result = object["cbt"]["solved"];
-                if (result != "true") {
+                if (!result) {
                     collector.ack(tuple);
                     cb();
                     return;
@@ -1897,7 +1897,6 @@
                     }
                 }
             } catch (e) {
-                conole.log("ERROR!! " + e);
                 this.emit("error", e);
                 return;
             }

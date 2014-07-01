@@ -121,7 +121,7 @@ function(err){
                             logger.debug('Fetching user_socket_id by HGET err: ', err);
                             logger.debug('Fetching user_socket_id by HGET result: ', result);
                             if (!err && null != result) {
-                                logger.debug('User socket id: ', result);
+                                logger.debug('User socket id: ', result.toString());
                                 io.of('/playground').sockets[result.toString()].volatile.emit(
                                     //socket.emit(
                                     'command', {
@@ -153,9 +153,10 @@ function(err){
 
                 io.of('/playground').use(socketIoAuthorization).on('connection', function (socket) {
                     console.log('connected to playground socket by id: ' + socket.id);
-                    logger.debug('storing socketid for user: ' + socket.handshake.userId);
+                    logger.debug('storing socketid for user: ' + socket.uuid);
                     // @todo: currently it is sent via socket connect. Should be received via session (security issue)
-                    var userId = socket.handshake.userId;
+                    var userId = socket.uuid;
+                    logger.debug('UserId = ' + userId);
                     // store user_id to socket_id
                     redisClient.HSET('user_' + userId, 'user_socket_id', socket.id, function(err, result) {
                         logger.debug('Stored socket_id to user_id err: ', err);

@@ -39,7 +39,7 @@ var joinBolt = new Bolt(function(events) {
 
         var result = object["cbt"]["solved"];
 
-        if (result != "true") {
+        if (!result) {
             collector.ack(tuple);
             cb();
             return;

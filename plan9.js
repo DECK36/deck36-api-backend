@@ -121,8 +121,10 @@ function(err){
                             logger.debug('Fetching user_socket_id by HGET err: ', err);
                             logger.debug('Fetching user_socket_id by HGET result: ', result);
                             if (!err && null != result) {
-                                logger.debug('User socket id: ', result.toString());
-                                io.of('/playground').sockets[result.toString()].volatile.emit(
+                                var socketId = result.toString();
+                                logger.debug('User socket id: ', socketId);
+                                console.log(io.of('/playground'));
+                                io.of('/playground').connected[socketId].volatile.emit(
                                     //socket.emit(
                                     'command', {
                                         payload: twig({

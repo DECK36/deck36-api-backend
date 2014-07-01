@@ -1,0 +1,60 @@
+{
+  "name": "plan9-backend",
+  "title": "plan9-backend",
+  "company": "DECK36 GmbH & Co. KG",
+  "version": "0.0.1",
+  "author": {
+    "name": "deck36",
+    "email": "support@deck36.de",
+    "homepage": "http://deck36.de"
+  },
+  "description": "plan9 backend",
+  "main": "",
+  "dependencies": {
+    "socket.io": "1.0.x",
+    "yaml": "~0.2.3",
+    "async": "~0.9.0",
+    "body-parser": "^1.0.2",
+    "compression": "^1.0.7",
+    "config": "~0.4.35",
+    "connect-redis": "~2.0.0",
+    "cookie-parser": "^1.1.0",
+    "express": "~4.0.0",
+    "express-session": "^1.3.1",
+    "hiredis": "~0.1.16",
+    "log4javascript": "git+https://github.com/DECK36/log4javascript.git#v1.4.9",
+    "method-override": "^1.0.2",
+    "morgan": "^1.0.1",
+    "node-uuid": "git+https://github.com/DECK36/node-uuid.git#afdd691e128c3678cddd6b2e378730893dcd256f",
+    "amqp": "~0.2.0",
+    "twig": "~0.7.1",
+    "session.socket.io": "~0.1.6",
+    "redis": "~0.10.2",
+    "validator": "~3.12.0",
+    "path": "~0.4.9",
+    "nexe": "^0.2.9",
+    "socket.io-redis": "^0.1.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "mocha": "~1.19.0",
+    "grunt-mocha-cli": "~1.8.0",
+    "grunt-concurrent": "~0.5.0",
+    "grunt-nodemon": "~0.2.1",
+    "grunt-exec": "~0.4.5"
+  },
+  "keywords": [
+    "deck36",
+    "plan9",
+    "js",
+    "json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://gitlab.deck36.de:p9fok/deck36-api-backend.git"
+  },
+  "bugs": {
+    "url": ""
+  }
+}

@@ -1,0 +1,116 @@
+webapp:
+  domain: "apiplan9.deck36.de"
+server:
+  host: "127.0.0.1"
+  port: 3001
+  ssl_key: './cert/dev.key'
+  ssl_cert: './cert/dev.crt'
+  connector: amqpconnector
+client:
+  url: '/js/plan9.min.js'
+  connect_url: '/connect'
+mail:
+  from: info@deck36.de
+  to: info@deck36.de
+  connect:
+    host: localhost
+    port: 25
+session:
+  cookie:
+    name: 'plan9_deck36'
+cookie:
+  domain: .deck36.de
+  path: ''
+  name: 'plan9_deck36'
+  comment: used to identify a client for plan9
+  signature: "8m,H;D86ecoDM?Ti*6;48Z@Bx"
+  # 1000 (s in ms) * 3600(h in s) * 24(d in h) * 365(y in d)  = 1 Years in ms
+  lifetime: 31536000000
+  secure: true
+redis:
+  host: '127.0.0.1'
+  port: 6379
+  debug_mode: false
+  options: {
+    return_buffers: true,
+    max_attempts: 100
+  }
+connectors:{
+  amqp: {
+    host: 'localhost',
+    port: 5672,
+    login: 'guest',
+    password: 'guest',
+    authMechanism: 'AMQPLAIN',
+    reconnect: false,
+    vhost: '/',
+    exchanges: {
+      plan9: {
+        name: 'plan9',
+        options: {
+          durable: true,
+          type: 'topic',
+          autoDelete: false
+        },
+        routingKey: '',
+        publishoptions: {
+          #contentEncoding: gzip
+        }
+      }
+    },
+    queues: {
+      plan9: {
+        name:'plan9-backchannel',
+        exchangetobind: {
+          name: 'plan9-backchannel'
+        },
+        options:{
+          exclusive: true,
+          passive: false,
+          durable: true,
+          autoDelete: true,
+          arguments: {
+            x-ha-policy: true,
+            x-message-ttl: 60 #delete messages from queue if older then 60s.
+          }
+        },
+        subscribeoptions: {
+          ack: false
+        }
+      }
+    }
+  },
+  file: {
+    filename: '/tmp/rsysqp-msg.log',
+    flags: 'w+',
+    mode: '0755'
+  }
+}
+models:
+  encryption:
+    algorithm: 'aes256'
+    key: 'w723;,;;r2.8g[8n'
+
+plan9:
+  overview:
+    size: {
+      rows: 200,
+      cols: 300
+    }
+  playground:
+    tablesize: 3
+    matchcomparisionground: 3
+    imageSpriteIncreaseFactor: 3
+    imageSprite:
+      numimagecols: 10
+      numimagerows: 20
+      size: {
+        width: 500,
+        height: 375
+      }
+  comparisonground:
+    imageEntity:
+      size: {
+        width: 500,
+        height: 375
+      }

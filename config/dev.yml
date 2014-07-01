@@ -1,0 +1,17 @@
+webapp:
+  domain: "api.plan9-dev.deck36.de"
+server:
+  connector: amqpconnector
+mail:
+  from: info@deck36.de
+  to: mike.lohmann@deck36.de
+cookie:
+  domain: '.plan9-dev.deck36.de'
+  name: 'plan9-dev_deck36'
+client:r
+  url: '/js/plan9.js'
+redis:
+  debug_mode: true
+session:
+  cookie:
+    name: 'plan9-dev_deck36'

@@ -1,0 +1,12 @@
+server:
+  connector: fileconnector
+client:
+  url: '/js/plan9.js'
+cookie:
+  domain:''
+connectors:{
+  file: {
+    filename: '/tmp/rsysqp-test.log',
+    flags: 'a'
+  }
+}

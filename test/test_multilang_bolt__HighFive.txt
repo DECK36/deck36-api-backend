@@ -1,0 +1,77 @@
+{
+    "conf": {
+        "deck36_storm": {
+            "HighFiveStreamJoinBolt": {
+                "main": "HighFiveStreamJoinBolt.prod.js",
+                "params": null,
+                "rabbitmq": {
+                    "exchange": "plan9",
+                    "routing_key": "cbt.#",
+                    "target_exchange": "plan9-backchannel"
+                },
+                "badge_timewindow": 50,
+                "badge": {
+                    "name": "HighFive",
+                    "text": "Hands up! You used the same cat to solve! Hooray!",
+                    "color": "#232312",
+                    "size": "30em",
+                    "effect": "explode"
+                }
+            }
+        }
+    },
+    "context": {
+        "task->component": {
+            "1": "example-spout",
+            "2": "__acker",
+            "3": "example-bolt"
+        },
+        "taskid": 3
+    },
+    "pidDir": "./"
+}
+end
+{
+    "id": "-6955786537413359385",
+    "comp": "1",
+    "stream": "1",
+    "task": 9,
+    "tuple": [{
+        "type": "cbt",
+        "user": {
+            "user_socket_id": 1,
+            "user_id": 1
+        },
+        "timestamp": "123456789101",
+        "version": 0.9,
+        "cbt": {
+            "solved": "true",
+            "coordinate": [150, 8],
+            "entity_coordinate": [120, 7]
+        }
+    }]
+}
+end
+{
+    "id": "-6955786537413359385",
+    "comp": "1",
+    "stream": "1",
+    "task": 9,
+    "tuple": [{
+        "type": "cbt",
+        "user": {
+            "user_socket_id": 2,
+            "user_id": 2
+        },
+        "timestamp": "123456789101",
+        "version": 0.9,
+        "cbt": {
+            "solved": "true",
+            "coordinate": [150, 8],
+            "entity_coordinate": [120, 7]
+        }
+    }]
+}
+end
+
+

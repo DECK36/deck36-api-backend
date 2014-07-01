@@ -258,7 +258,7 @@ function(err){
                                                             }
                                                         };
                                                         logger.debug('Points message to send: ', pointsMessage);
-                                                        connector.send(connectionHandler, new Buffer(pointsMessage), config, function(err) {
+                                                        connector.send(connectionHandler, new Buffer(JSON.stringify(pointsMessage)), config, function(err) {
                                                             logger.debug('SENDING points to amqp.' + err);
                                                             if (!err) {
 
@@ -282,7 +282,7 @@ function(err){
                                                 var cbtMessage = new CbtMessageCreator(cbtSolution, userId, isSolved, pixelResult).createMessage();
 
                                                 logger.debug('CBT message to send: ', cbtMessage);
-                                                connector.send(connectionHandler, new Buffer(cbtMessage), config, function(err) {
+                                                connector.send(connectionHandler, new Buffer(JSON.stringify(cbtMessage)), config, function(err) {
                                                     if (!err) {
                                                         var playGroundSolvedMessage = new PlaygroundSolvedMessageCreator(isSolved, pixelResult).createMessage();
                                                         logger.debug('Playground solved message to send: ', playGroundSolvedMessage);

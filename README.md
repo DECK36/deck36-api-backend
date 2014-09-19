@@ -48,7 +48,7 @@ NOTE: By default the redis listening on 127.0.0.1:6379 will be used. It is recom
 
 For now, also use `bin/install.sh`, it installs all necessary dependencies. 
 
-[d]
+<del>
 
 1. Install some dependencies
 ```
@@ -62,7 +62,7 @@ OR
 sh bin/install_dev.sh
 ```
 
-[/d]
+</del>
 
 ### Running the dev server
 

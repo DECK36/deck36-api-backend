@@ -45,6 +45,11 @@ sh bin/install.sh
 NOTE: By default the redis listening on 127.0.0.1:6379 will be used. It is recommended to have a separate redis instance for iojs. Otherwise your current data might be overwritten.
 
 ## Development & Testing
+
+For now, also use `bin/install.sh`, it installs all necessary dependencies. 
+
+[d]
+
 1. Install some dependencies
 ```
 npm i -g nodemon;
@@ -56,6 +61,8 @@ OR
 ```
 sh bin/install_dev.sh
 ```
+
+[/d]
 
 ### Running the dev server
 

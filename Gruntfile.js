@@ -142,7 +142,7 @@ module.exports = function (grunt) {
          ////////////////////////////////
          exec: {
              patch: {
-                 command: 'sh `pwd`/bin/patch.sh',
+                 command: 'sh `pwd`', // patching not necessary atm and causes grunt to fail..  /bin/patch.sh',
                  stdout: true,
                  stderr: false
              },

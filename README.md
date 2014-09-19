@@ -25,10 +25,15 @@ This is the api backend for plan9 mmorpg.
 4. Checkout these sources.
 5. Install some dependencies
 ```
- npm install;
- npm i -g pm2;
- npm i -g grunt-cli;
- grunt prepare;
+ npm cache clean
+ sudo npm i -g --unsafe-perm pm2
+ sudo npm i -g grunt-cli
+ sudo npm i -g fibers
+ sudo npm i -g nodemon
+ sudo npm i -g sardines
+ npm i fibers
+ npm install
+ grunt prepare
 ```
 
 OR
